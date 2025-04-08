@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eu Te Amo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8e1e1;
+            color: #333;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #e50061;
+            margin-bottom: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 30px;
+            animation: fadeIn 3s ease-in-out 1s;
+        }
+
+        .heart {
+            font-size: 100px;
+            color: #e50061;
+            margin: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .heart:hover {
+            transform: scale(1.3);
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #e50061;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff1a75;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Eu te amo demais, minha gatinha!</h1>
+    <p>Você é a razão do meu sorriso todos os dias! <br>Eu sou tão sortudo por ter você na minha vida.</p>
+    <div class="heart" onclick="enviarAmor()">❤️</div>
+    <button onclick="mostrarMensagem()">Clique para um Segredo Especial</button>
+    <div id="segredo" style="display: none; margin-top: 20px;">
+        <h2>Você é a princesa mais linda do mundo</h2>
+        <p>Te amo mais do que palavras podem expressar.</p>
+    </div>
+
+    <script>
+        // Função para animar o coração e mostrar mais amor
+        function enviarAmor() {
+            const heart = document.querySelector('.heart');
+            heart.style.animation = "pulse 0.6s infinite"; // animação de pulsar
+            setTimeout(() => {
+                heart.style.animation = ""; // remove a animação após um tempo
+            }, 1000);
+        }
+
+        // Função para mostrar uma mensagem secreta ao clicar no botão
+        function mostrarMensagem() {
+            const segredo = document.getElementById('segredo');
+            segredo.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
